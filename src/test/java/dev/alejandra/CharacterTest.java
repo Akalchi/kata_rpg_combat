@@ -10,5 +10,11 @@ public class CharacterTest {
         Character character = new Character();
         assertEquals(1000, character.getHealth());
     }
+
+    @Test
+    public void newCharacterShouldBeLevel1() {
+        Character character = new Character();
+        assertEquals(1, character.getLevel());
+    }
     
 }
