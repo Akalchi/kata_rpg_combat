@@ -24,5 +24,15 @@ public class CharacterTest {
         Character character = new Character();
         assertTrue(character.isAlive());
     }
+
+    @Test
+    public void characterShouldTakeDamage() {
+        Character attacker = new Character();
+        Character target = new Character();
+        
+        attacker.dealDamage(target, 100);
+        
+        assertEquals(900, target.getHealth());
+    }
     
 }
