@@ -31,4 +31,30 @@ public class Character {
             target.alive = false;
         }
     }
+
+    public void receiveDamage(int amount) {
+        if (amount < 0) {
+            throw new IllegalArgumentException("Damage cannot be negative");
+        }
+        
+        health = Math.max(0, health - amount);
+        
+        if (health == 0) {
+            alive = false;
+        }
+    }
+
+    public void heal(Character target, int amount) {
+        if (!target.isAlive()) {
+            return; 
+        }
+        
+        if (amount < 0) {
+            throw new IllegalArgumentException("Healing amount cannot be negative");
+        }
+        
+        target.health = Math.min(1000, target.health + amount);
+    }
+
+
 }
